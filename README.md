@@ -19,12 +19,35 @@ This project creates a **province-level choropleth** for the **Philippines only*
 
 ## Run
 
+### macOS / Linux
+
 ```bash
 python3 scripts/scrape_iuu_data.py
 python3 -m http.server 8000
 ```
 
 Open `http://localhost:8000/web/`.
+
+### Windows (PowerShell / CMD)
+
+```powershell
+py scripts\scrape_iuu_data.py
+py -m http.server 8000
+```
+
+Open `http://localhost:8000/web/`.
+
+## If Python is not found on Windows
+
+If you see:
+
+- `Python was not found; run without arguments to install from the Microsoft Store...`
+
+use one of these fixes:
+
+1. Install Python from `https://www.python.org/downloads/windows/` and enable **Add python.exe to PATH** during install.
+2. Or use the `py` launcher commands shown above.
+3. If Store alias keeps interfering, disable **App execution aliases** for Python in Windows Settings.
 
 ## Data quality improvements
 

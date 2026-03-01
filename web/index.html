@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Philippines IUU Fishing Choropleth by Province</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <style>
+      body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #f4f7fb; }
+      .layout { display: grid; grid-template-columns: 330px 1fr; min-height: 100vh; }
+      .sidebar { padding: 1rem; background: #fff; border-right: 1px solid #e7ebf3; }
+      #map { width: 100%; height: 100vh; }
+      .legend i { width: 16px; height: 16px; float: left; margin-right: 8px; opacity: 0.95; }
+      .small { color: #5b6472; font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Philippines IUU Fishing Risk (Proxy)</h2>
+        <p class="small">Province score uses mention counts from scraped IUU-fishing news snippets focused on the Philippines.</p>
+        <p class="small" id="meta"></p>
+      </aside>
+      <main id="map"></main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+      const PH_PROVINCES_GEOJSON = 'https://raw.githubusercontent.com/faeldon/philippines-json-maps/master/2023/geojson/provinces.geojson';
+      const map = L.map('map').setView([12.5, 122.5], 6);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+
+      const colors = ['#fff5f0', '#fee0d2', '#fcbba1', '#fc9272', '#fb6a4a', '#de2d26', '#a50f15'];
+      const colorFor = (score) => score > 80 ? colors[6] : score > 60 ? colors[5] : score > 45 ? colors[4] : score > 30 ? colors[3] : score > 15 ? colors[2] : score > 0 ? colors[1] : colors[0];
+
+      function provinceName(feature) {
+        const props = feature.properties || {};
+        return props.name || props.NAME_1 || props.province || props.PROVINCE || 'Unknown';
+      }
+
+      function normalizeName(name) {
+        const alias = { 'Metro Manila': 'Metropolitan Manila', 'NCR': 'Metropolitan Manila', 'Manila': 'Metropolitan Manila', 'North Cotabato': 'Cotabato' };
+        return alias[name] || name;
+      }
+
+      Promise.all([
+        fetch('../data/iuu_scores.json').then((r) => r.json()),
+        fetch(PH_PROVINCES_GEOJSON).then((r) => r.json())
+      ]).then(([scores, geo]) => {
+        const scoreMap = new Map(scores.provinces.map((p) => [p.province, p]));
+        document.getElementById('meta').textContent = `Country: ${scores.country || 'Philippines'} | Snippets: ${scores.sample_size}`;
+
+        L.geoJSON(geo, {
+          style: (feature) => {
+            const province = normalizeName(provinceName(feature));
+            const rec = scoreMap.get(province);
+            const score = rec ? rec.iuu_score : 0;
+            return { fillColor: colorFor(score), weight: 1, opacity: 1, color: '#fff', fillOpacity: 0.85 };
+          },
+          onEachFeature: (feature, layer) => {
+            const province = normalizeName(provinceName(feature));
+            const rec = scoreMap.get(province) || { iuu_score: 0, mentions: 0 };
+            layer.bindPopup(`<b>${province}</b><br>IUU score: ${rec.iuu_score}<br>Mentions: ${rec.mentions}`);
+          }
+        }).addTo(map);
+
+        const legend = L.control({ position: 'bottomright' });
+        legend.onAdd = () => {
+          const div = L.DomUtil.create('div', 'legend');
+          div.style.background = 'white'; div.style.padding = '8px'; div.style.border = '1px solid #ccc';
+          [0, 1, 16, 31, 46, 61, 81].forEach((from, idx, arr) => {
+            const to = arr[idx + 1] ? arr[idx + 1] - 1 : 100;
+            div.innerHTML += `<div><i style="background:${colorFor(from)}"></i>${from}-${to}</div>`;
+          });
+          return div;
+        };
+        legend.addTo(map);
+      }).catch((err) => console.error('Failed loading map data', err));
+    </script>
+  </body>
+</html>

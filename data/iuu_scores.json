@@ -1,0 +1,425 @@
+{
+  "country": "Philippines",
+  "method": "Province mention counts from IUU-related news RSS snippets (proxy metric)",
+  "sources": [
+    "fallback_seed_data"
+  ],
+  "sample_size": 6,
+  "provinces": [
+    {
+      "province": "Abra",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Aklan",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Albay",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Antique",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Apayao",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Aurora",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Basilan",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Bataan",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Batanes",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Batangas",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Benguet",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Biliran",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Bohol",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Bukidnon",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Bulacan",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Cagayan",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Camarines Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Camiguin",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Capiz",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Catanduanes",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Cavite",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Cebu",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Cotabato",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Davao Occidental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Davao Oriental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Davao de Oro",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Davao del Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Davao del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Dinagat Islands",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Guimaras",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Ifugao",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Ilocos Norte",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Iloilo",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Isabela",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Kalinga",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "La Union",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Laguna",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Leyte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Maguindanao del Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Maguindanao del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Marinduque",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Masbate",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Metropolitan Manila",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Mountain Province",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Nueva Ecija",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Nueva Vizcaya",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Occidental Mindoro",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Oriental Mindoro",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Palawan",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Pampanga",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Pangasinan",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Quezon",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Quirino",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Rizal",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Romblon",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Samar",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Sarangani",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Siquijor",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "South Cotabato",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Southern Leyte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Sultan Kudarat",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Sulu",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Tarlac",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Tawi-Tawi",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Zambales",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Zamboanga Sibugay",
+      "mentions": 0,
+      "iuu_score": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "mentions": 1,
+      "iuu_score": 100.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "mentions": 0,
+      "iuu_score": 0.0
+    }
+  ]
+}
